@@ -1,0 +1,35 @@
+﻿<div data-bind="template: {name: 'main-table'}" class="row" id="main-table-container">
+
+</div>
+
+<script type="text/html" id="main-table">
+    <table class="table table-condensed">
+        <!-- ko template: {name: 'table-head'}-->
+        <!-- /ko -->    
+        <!-- ko template: {name: 'table-body'}-->
+        <!-- /ko -->    
+    </table>
+</script>
+
+<script type="text/html" id="table-head">
+    <thead>
+        <tr>
+            <th></th>
+            <!-- ko foreach: people[0].values-->
+            <th data-bind="text:$index"></th>
+            <!-- /ko -->
+        </tr>
+    </thead>
+</script>
+
+<script type="text/html" id="table-body">
+    <tbody data-bind="foreach:people">
+        <tr>
+            <td data-bind="text:name"></td>
+            <!-- ko foreach: values -->
+            <td data-bind="text:$data"></td>
+            <!--/ko-->
+        </tr>
+    </tbody>
+</script>
+<script src="~/Scripts/app/docFragmentTemplateKO.js"></script>

@@ -1,13 +1,11 @@
 ﻿$(document).ready(function() {
-
-
     var viewModel = {
         people: getModels()
     }
 
     var docFragment = document.createDocumentFragment();
     var tableContainer = document.createElement("table");
-    tableContainer.setAttribute("class", "table table-condensed")
+    tableContainer.setAttribute("class", "table table-condensed");
     
     var tableHead = document.createElement("thead");
 
@@ -38,10 +36,3 @@
     ko.applyBindings(viewModel, tableContainer);
     el.appendChild(docFragment);
 });
-
-function getModels() {
-    return _.chain(_.range(100))
-        .map(function(index) {
-            return { name: "Generator" + index, values: _.range(3 * 96) };
-        }).value();
-}

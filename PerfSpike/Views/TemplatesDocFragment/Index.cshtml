@@ -1,13 +1,21 @@
-﻿<div data-bind="template: {name: 'main-table'}" class="row" id="main-table-container">
-
+﻿<div class="row" id="main-table-container">
+    <div id="header-container"></div>
+    <h1 id="rendering-message">Rendering.... <i class="glyphicon glyphicon-cog"></i></h1>
+    <div id="content-container"></div>
 </div>
+
+<script type="text/html" id="header">
+    <!-- ko foreach: people -->
+    <span class="label label-success glyphicon glyphicon-tint" data-bind="text:name"></span>
+    <!-- /ko -->
+</script>
 
 <script type="text/html" id="main-table">
     <table class="table table-condensed">
         <!-- ko template: {name: 'table-head'}-->
-        <!-- /ko -->    
+        <!-- /ko -->
         <!-- ko template: {name: 'table-body'}-->
-        <!-- /ko -->    
+        <!-- /ko -->
     </table>
 </script>
 
